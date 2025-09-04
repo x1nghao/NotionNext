@@ -62,7 +62,7 @@ const Style = () => {
       }
       
       .dark a {
-        color: #58a6ff;
+        color: #8cc2dd;
       }
       
       /* Code blocks */
