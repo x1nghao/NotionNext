@@ -23,8 +23,8 @@ const Style = () => {
       
       /* Dark mode */
       .dark body {
-        background-color: #111;
-        color: #eee;
+        background-color: #01242e;
+        color: #ddd;
       }
       
       /* Typography */

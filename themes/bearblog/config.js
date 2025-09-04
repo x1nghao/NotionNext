@@ -21,11 +21,11 @@ export default {
   FONT_SERIF: ['Georgia', 'Times New Roman', 'serif'],
   FONT_SIZE_BASE: '16px',
   BACKGROUND_COLOR_LIGHT: '#ffffff',
-  BACKGROUND_COLOR_DARK: '#111111',
+  BACKGROUND_COLOR_DARK: '#01242e',
   TEXT_COLOR_LIGHT: '#333333',
-  TEXT_COLOR_DARK: '#eeeeee',
+  TEXT_COLOR_DARK: '#dddddd',
   ACCENT_COLOR_LIGHT: '#0366d6',
-  ACCENT_COLOR_DARK: '#58a6ff',
+  ACCENT_COLOR_DARK: '#8cc2dd',
 
   // layout - simple list view by default
   POST_LIST_STYLE: 'list', // list only for BearBlog style

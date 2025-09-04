@@ -41,10 +41,10 @@ const LayoutBase = props => {
 
   return (
     <ThemeGlobalBear.Provider value={{}}>
-      <div id='theme-bear' className={`${siteConfig('FONT_STYLE')} dark:bg-black scroll-smooth`}>
+      <div id='theme-bearblog' className={`${siteConfig('FONT_STYLE')} scroll-smooth`}>
         <Style />
         <Header {...props} />
-        <main id='wrapper' className='relative flex w-full py-8 justify-center bg-day dark:bg-night'>
+        <main id='wrapper' className='relative flex w-full py-8 justify-center'>
           <div id='container-inner' className={`${fullWidth ? '' : '2xl:max-w-3xl'} w-full relative z-10`}>
             <Transition
               show={!onLoading}
