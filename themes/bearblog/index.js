@@ -9,6 +9,11 @@ import { createContext, useContext, useEffect } from 'react'
 import ArticleDetail from './components/ArticleDetail'
 import BlogListPage from './components/BlogListPage'
 import Header from './components/Header'
+import SearchPage from './components/SearchPage'
+import ArchivePage from './components/ArchivePage'
+import NotFoundPage from './components/NotFoundPage'
+import CategoryList from './components/CategoryList'
+import TagList from './components/TagList'
 import { Style } from './style'
 import CONFIG from './config'
 
@@ -113,14 +118,14 @@ const LayoutSlug = props => {
  * Search page
  */
 const LayoutSearch = props => {
-  return <div>Search Page</div>
+  return <SearchPage {...props} />
 }
 
 /**
  * Archive page
  */
 const LayoutArchive = props => {
-  return <div>Archive Page</div>
+  return <ArchivePage {...props} />
 }
 
 /**
@@ -129,7 +134,7 @@ const LayoutArchive = props => {
  * @returns
  */
 const Layout404 = props => {
-  return <div>404 Page</div>
+  return <NotFoundPage {...props} />
 }
 
 /**
@@ -138,7 +143,7 @@ const Layout404 = props => {
  * @returns
  */
 const LayoutCategoryIndex = props => {
-  return <div>Category List</div>
+  return <CategoryList {...props} />
 }
 
 /**
@@ -147,7 +152,7 @@ const LayoutCategoryIndex = props => {
  * @returns
  */
 const LayoutTagIndex = props => {
-  return <div>Tag List</div>
+  return <TagList {...props} />
 }
 
 export {
