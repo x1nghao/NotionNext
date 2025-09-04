@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useGlobal } from '@/lib/global'
 import { siteConfig } from '@/lib/config'
 import Link from 'next/link'
-import { formatDateFmt } from '@/lib/formatDate'
+import { formatDateFmt } from '@/lib/utils/formatDate'
 
 /**
  * Search page component for bearblog theme
