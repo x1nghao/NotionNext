@@ -57,12 +57,14 @@ export const BlogListScroll = props => {
 
   return (
     <div
-      id='posts-wrapper'
       className={`w-full mb-12`}
       ref={targetRef}>
-      {postsToShow?.map(post => (
-        <BlogItem key={post.id} post={post} />
-      ))}
+      
+      <ul id='posts-wrapper' className='blog-posts'>
+        {postsToShow?.map(post => (
+          <BlogItem key={post.id} post={post} />
+        ))}
+      </ul>
 
       <div
         onClick={handleGetMore}

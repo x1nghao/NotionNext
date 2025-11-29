@@ -30,11 +30,11 @@ export const BlogListPage = props => {
 
   return (
     <div className={`w-full mb-12`}>
-      <div id='posts-wrapper'>
+      <ul id='posts-wrapper' className='blog-posts'>
         {posts?.map(post => (
           <BlogItem key={post.id} post={post} />
         ))}
-      </div>
+      </ul>
 
       <div className='flex justify-between text-xs'>
         <SmartLink

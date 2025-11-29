@@ -57,22 +57,23 @@ export const MenuList = props => {
   }
 
   return (
-    <nav className='flex flex-wrap justify-center md:justify-end'>
-      {links.map((link, index) => {
-        if (link && link.show !== false) {
-             return (
-                <SmartLink
-                  key={index}
-                  href={link.href}
-                  target={link.target}
-                  className='ml-4'
-                >
-                  {link.name}
-                </SmartLink>
-             )
-        }
-        return null
-      })}
+    <nav>
+      <p>
+        {links.map((link, index) => {
+          if (link && link.show !== false) {
+            return (
+              <SmartLink
+                key={index}
+                href={link.href}
+                target={link.target}
+              >
+                {link.name}
+              </SmartLink>
+            )
+          }
+          return null
+        })}
+      </p>
     </nav>
   )
 }

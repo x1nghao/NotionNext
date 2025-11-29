@@ -9,18 +9,14 @@ import { MenuList } from './MenuList'
  */
 export const Header = props => {
   return (
-    <header className='md:flex justify-between items-center mt-2 mb-6'>
-      <div className='flex-shrink-0 mr-4'>
-        <SmartLink
-          href='/'
-          className='text-2xl font-bold text-black dark:text-white no-underline'>
-          {siteConfig('TITLE')}
-        </SmartLink>
-      </div>
+    <header className='mt-2 mb-6'>
+      <SmartLink
+        href='/'
+        className='title text-2xl font-bold text-black dark:text-white no-underline'>
+        <h1>{siteConfig('TITLE')}</h1>
+      </SmartLink>
       
-      <div className='flex-grow'>
-         <MenuList {...props} />
-      </div>
+      <MenuList {...props} />
     </header>
   )
 }

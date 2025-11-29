@@ -12,27 +12,31 @@ const Style = () => {
     }
 
     :root {
-      --width: 720px;
-      --font-main: Verdana, sans-serif;
-      --font-secondary: Verdana, sans-serif;
-      --font-scale: 1em;
-      --background-color: #fff;
-      --heading-color: #222;
-      --text-color: #444;
-      --link-color: #3273dc;
-      --visited-color: #8b6fcb;
-      --blockquote-color: #222;
+        --width: 720px;
+        --font-main: Verdana, sans-serif;
+        --font-secondary: Verdana, sans-serif;
+        --font-scale: 1em;
+        --background-color: #fff;
+        --heading-color: #222;
+        --text-color: #444;
+        --link-color: #3273dc;
+        --visited-color: #8b6fcb;
+        --code-background-color: #f2f2f2;
+        --code-color: #222;
+        --blockquote-color: #222;
     }
 
     @media (prefers-color-scheme: dark) {
-      :root {
-        --background-color: #333;
-        --heading-color: #eee;
-        --text-color: #ddd;
-        --link-color: #8cc2dd;
-        --visited-color: #8b6fcb;
-        --blockquote-color: #ccc;
-      }
+        :root {
+            --background-color: #01242e;
+            --heading-color: #eee;
+            --text-color: #ddd;
+            --link-color: #8cc2dd;
+            --visited-color: #8b6fcb;
+            --code-background-color: #000;
+            --code-color: #ddd;
+            --blockquote-color: #ccc;
+        }
     }
 
     html {
@@ -142,6 +146,9 @@ const Style = () => {
 
     .highlight,
     .code {
+      padding: 1px 15px;
+      background-color: var(--code-background-color);
+      color: var(--code-color);
       border-radius: 3px;
       margin-block-start: 1em;
       margin-block-end: 1em;
@@ -156,14 +163,25 @@ const Style = () => {
 
     ul.blog-posts li {
       display: flex;
+      margin-bottom: 0.5rem;
     }
 
-    ul.blog-posts li span {
+    ul.blog-posts li time {
       flex: 0 0 130px;
     }
 
     ul.blog-posts li a:visited {
       color: var(--visited-color);
+    }
+    
+    @media (max-width: 600px) {
+      ul.blog-posts li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      ul.blog-posts li time {
+        margin-bottom: 0.2rem;
+      }
     }
 
   `}</style>
