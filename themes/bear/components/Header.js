@@ -12,7 +12,7 @@ export const Header = props => {
     <header className='mt-2 mb-6'>
       <SmartLink
         href='/'
-        className='title text-2xl font-bold text-black dark:text-white no-underline'>
+        className='title text-2xl font-bold no-underline block mb-2'>
         <h1>{siteConfig('TITLE')}</h1>
       </SmartLink>
       

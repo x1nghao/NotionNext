@@ -184,6 +184,28 @@ const Style = () => {
       }
     }
 
+    /* Notion Content Overrides */
+    .notion {
+        color: var(--text-color);
+    }
+    .notion h1, .notion h2, .notion h3, .notion h4, .notion h5, .notion h6 {
+        color: var(--heading-color);
+    }
+    .notion b, .notion strong {
+        color: var(--heading-color);
+    }
+    .notion-code {
+        background: var(--code-background-color) !important;
+        color: var(--code-color) !important;
+    }
+    .notion-quote {
+        color: var(--blockquote-color);
+        border-left-color: #999;
+    }
+    .notion-link {
+        color: var(--link-color);
+    }
+
   `}</style>
   
   
