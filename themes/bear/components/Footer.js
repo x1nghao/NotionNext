@@ -7,7 +7,7 @@ export const Footer = props => {
   const copyrightDate = parseInt(since) < currentYear ? since + '-' + currentYear : currentYear
 
   return (
-    <footer className='mt-12 py-6 text-center text-sm text-gray-500 dark:text-gray-400'>
+    <footer className='mt-12 py-6 text-center text-sm opacity-60'>
       <div className='mb-2'>
         <span>
           © {copyrightDate} {siteConfig('AUTHOR')}

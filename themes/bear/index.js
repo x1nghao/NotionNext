@@ -35,14 +35,14 @@ const LayoutBase = props => {
   return (
     <div
       id='theme-bear'
-      className={`${siteConfig('FONT_STYLE')} scroll-smooth`}>
+      className={`${siteConfig('FONT_STYLE')} scroll-smooth min-h-screen flex flex-col`}>
       <Style />
 
       {/* 页头 */}
       <Header {...props} />
 
       {/* 主体 */}
-      <div id='container-inner' className='w-full relative z-10'>
+      <div id='container-inner' className='w-full relative z-10 flex-grow'>
         <div className='transition-all duration-300'>
           {onLoading ? (
             <div className='min-h-screen flex justify-center items-center'>

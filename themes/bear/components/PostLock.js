@@ -34,7 +34,7 @@ export const PostLock = props => {
       className='w-full flex justify-center items-center h-96 '>
       <div className='text-center space-y-3'>
         <div className='font-bold'>{locale.COMMON.ARTICLE_LOCK_TIPS}</div>
-        <div className='flex mx-4'>
+        <div className='flex mx-4 max-w-xs mx-auto'>
           <input
             id='password'
             type='password'
@@ -44,13 +44,13 @@ export const PostLock = props => {
               }
             }}
             ref={passwordInputRef} // 绑定ref到passwordInputRef变量
-            className='outline-none w-full text-sm pl-5 rounded-l transition focus:shadow-lg font-light leading-10 text-black dark:bg-gray-500 bg-gray-50'></input>
+            className='outline-none w-full text-sm pl-5 border border-r-0 py-2 transition focus:shadow-lg font-light text-current bg-transparent border-gray-400'></input>
           <div
             onClick={submitPassword}
-            className='px-3 whitespace-nowrap cursor-pointer items-center justify-center py-2 rounded-r duration-300 bg-gray-300'>
+            className='px-3 whitespace-nowrap cursor-pointer items-center justify-center py-2 border border-l-0 duration-300 bg-gray-100 dark:bg-gray-800 border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'>
             <i
               className={
-                'duration-200 cursor-pointer fas fa-key dark:text-black'
+                'duration-200 cursor-pointer fas fa-key'
               }>
               &nbsp;{locale.COMMON.SUBMIT}
             </i>

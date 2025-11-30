@@ -39,6 +39,17 @@ const Style = () => {
         }
     }
 
+    html.dark {
+        --background-color: #01242e;
+        --heading-color: #eee;
+        --text-color: #ddd;
+        --link-color: #8cc2dd;
+        --visited-color: #8b6fcb;
+        --code-background-color: #000;
+        --code-color: #ddd;
+        --blockquote-color: #ccc;
+    }
+
     html {
         background-color: var(--background-color);
     }
