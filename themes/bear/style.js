@@ -216,6 +216,11 @@ const Style = () => {
     .notion-link {
         color: var(--link-color);
     }
+    .notion-asset-caption, 
+    .notion-image-caption {
+        color: var(--text-color);
+        opacity: 0.7;
+    }
 
   `}</style>
   
