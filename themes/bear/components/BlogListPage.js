@@ -2,7 +2,6 @@ import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import SmartLink from '@/components/SmartLink'
 import { useRouter } from 'next/router'
-import CONFIG from '../config'
 import BlogItem from './BlogItem'
 /**
  * 使用分页插件的博客列表
@@ -25,8 +24,6 @@ export const BlogListPage = props => {
     .replace(/\/page\/[1-9]\d*/, '')
     .replace(/\/$/, '')
     .replace('.html', '')
-
-  const showPageCover = siteConfig('EXAMPLE_POST_LIST_COVER', null, CONFIG)
 
   return (
     <div className={`w-full mb-12`}>

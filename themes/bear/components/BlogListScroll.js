@@ -1,8 +1,7 @@
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import throttle from 'lodash.throttle'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import CONFIG from '../config'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import BlogItem from './BlogItem'
 /**
  * 使用滚动无限加载的博客列表
@@ -15,51 +14,41 @@ export const BlogListScroll = props => {
   const [page, updatePage] = useState(1)
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
 
-  let hasMore = false
-  const postsToShow = posts
-    ? Object.assign(posts).slice(0, POSTS_PER_PAGE * page)
-    : []
+  const hasMore = posts ? page * POSTS_PER_PAGE < posts.length : false
+  const postsToShow = posts ? posts.slice(0, POSTS_PER_PAGE * page) : []
 
-  if (posts) {
-    const totalCount = posts.length
-    hasMore = page * POSTS_PER_PAGE < totalCount
-  }
-  const handleGetMore = () => {
+  const handleGetMore = useCallback(() => {
     if (!hasMore) return
-    updatePage(page + 1)
-  }
+    updatePage(p => p + 1)
+  }, [hasMore])
 
   const targetRef = useRef(null)
 
   // 监听滚动自动分页加载
-  const scrollTrigger = useCallback(
-    throttle(() => {
-      const scrollS = window.scrollY + window.outerHeight
-      const clientHeight = targetRef
-        ? targetRef.current
-          ? targetRef.current.clientHeight
-          : 0
-        : 0
+  const scrollTrigger = useMemo(() => {
+    return throttle(() => {
+      const scrollS = window.scrollY + window.innerHeight
+      const clientHeight = targetRef?.current?.clientHeight || 0
       if (scrollS > clientHeight + 100) {
         handleGetMore()
       }
     }, 500)
-  )
-  const showPageCover = siteConfig('EXAMPLE_POST_LIST_COVER', null, CONFIG)
+  }, [handleGetMore])
 
   useEffect(() => {
     window.addEventListener('scroll', scrollTrigger)
 
     return () => {
       window.removeEventListener('scroll', scrollTrigger)
+      scrollTrigger.cancel?.()
     }
-  })
+  }, [scrollTrigger])
 
   return (
     <div
       className={`w-full mb-12`}
       ref={targetRef}>
-      
+
       <ul id='posts-wrapper' className='blog-posts'>
         {postsToShow?.map(post => (
           <BlogItem key={post.id} post={post} />

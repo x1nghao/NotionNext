@@ -186,6 +186,14 @@ const Style = () => {
     }
     
     @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      nav a {
+        display: inline-block;
+        margin-bottom: 5px;
+        padding: 2px 0;
+      }
       ul.blog-posts li {
         flex-direction: column;
         align-items: flex-start;

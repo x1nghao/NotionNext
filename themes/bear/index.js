@@ -7,7 +7,6 @@ import ShareBar from '@/components/ShareBar'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
-import { Transition } from '@headlessui/react'
 import SmartLink from '@/components/SmartLink'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
@@ -18,6 +17,7 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { PostLock } from './components/PostLock'
 import { PostMeta } from './components/PostMeta'
+import SearchInput from './components/SearchInput'
 import CONFIG from './config'
 import { Style } from './style'
 
@@ -29,7 +29,7 @@ import { Style } from './style'
  * @constructor
  */
 const LayoutBase = props => {
-  const { children, post } = props
+  const { children } = props
   const { onLoading, locale } = useGlobal()
 
   return (
@@ -134,7 +134,7 @@ const LayoutSlug = props => {
         waiting404
       )
     }
-  }, [post])
+  }, [post, router, waiting404])
   return (
     <>
       {lock ? (
@@ -170,7 +170,7 @@ const Layout404 = props => {
         })
       }
     }, 3000)
-  }, [])
+  }, [router])
 
   return <>
         <div className='md:-mt-20 text-black w-full h-screen text-center justify-center content-center items-center flex flex-col'>
@@ -207,7 +207,7 @@ const LayoutSearch = props => {
         })
       }
     }
-  }, [router])
+  }, [keyword, router])
 
   return (
     <>
