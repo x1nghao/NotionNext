@@ -15,7 +15,7 @@ export const PostMeta = props => {
   }
 
   return (
-    <section className='flex-wrap flex mt-2 mb-8 text-sm opacity-70'>
+    <section className='flex-wrap flex mt-2 mb-4 text-sm opacity-70'>
       <div>
         <SmartLink
           href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
