@@ -142,6 +142,7 @@ const LayoutSlug = props => {
       ) : post && (
         <div>
           <PostMeta post={post} />
+          <h1 className='text-3xl font-bold'>{post?.title}</h1>
           <div id='article-wrapper'>
             <NotionPage post={post} />
             <ShareBar post={post} />
